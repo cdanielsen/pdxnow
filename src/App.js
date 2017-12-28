@@ -8,9 +8,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">NOW</h1>
         </header>
-        <section className="Main-content">
-
-        </section>
+        <section className="Main-content" />
       </div>
     );
   }
