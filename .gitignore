@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# secrets
+.env
+
 # testing
 /coverage
 
@@ -17,3 +20,4 @@
 .env.production.local
 
 npm-debug.log*
+*.txt
