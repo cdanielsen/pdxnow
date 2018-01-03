@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '8'
+install: npm i
+script: npm run build
+deploy:
+  provider: heroku
+  app: pdxnow
+  skip_cleanup: true
+  api_key:
+    secure: kS+bTTEGC8B1GE+yE5pQ204go2NAKifFVlaDXElGCbvHJLjZBh/rSuXrH9m17KBxi1xXYBSUz/ZRWtBLHliu/tirJwnFsAwzMLHXMrTClGlDqiS9J4BJa5R78AX1Ht3sROHKjOA8Az5PlftO7A//w7gup1BDkA3143HXxLT7Kypw39Zk29XENFIGda9DImetavceyhfTAKzskwbs0yMOSW9T4DfSDciIad6I1cYPnqGNMuyWDvlWQGpZKbGz1Bb3npS/7fSLNB8chLdIh5AVgJYBkmlqc7Skd9gpI/U+wE8i6kSXEPVe/vD9pGmKwlqkrBIYkvhWwDHt+/IXYeSeRbRwkREG+T7n41kH15StnWIhsY7v73WOKPxSORtQLDm07qqNwXaeTmzF3ksfSIVfPeVh5wfMbQIpfwdHJ5oljxRqxVD5tjw25dZ3QIzBHghN6eGLNzScXMaao6TOgyM3RneTeIiso6U6EVwifpSdQpHnz6vW2jmVhpCIWuVgUGN0LEWNvR2qWi3EPOdlDYvugQvzE8+Zj7QKOjLydpsfkQRZO7bTSVdIy2TlL1YbGckVqwUJwhnb6K0jdKsQvnS3LMiPjtI3qjXlXEKXpJSoT3o0xJKgoqfC5N7FTzLZfSoQHLzkq3KrUVPHnU36Ipqay/tuM1ljWWt3+5JehQfc06Q=
