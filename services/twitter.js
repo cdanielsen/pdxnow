@@ -1,7 +1,7 @@
 const qs = require('querystring')
 const rp = require('request-promise').defaults({json: true})
 const { log, error } = console
-const { APP_CREDS_TWITTER_SECRET, APP_CREDS_TWITTER_TOKEN } = process.env
+const { APP_CREDS_TWITTER_SECRET } = process.env
 
 const getToken = () => {
   return rp({
@@ -19,7 +19,7 @@ const getToken = () => {
 const getTweets = async (searchTerm) => {
   const encodedSearchTerm = qs.escape(searchTerm)
 
-  if (!APP_CREDS_TWITTER_TOKEN) {
+  if (!process.env.APP_CREDS_TWITTER_TOKEN) {
     try {
       log('Getting/caching an app bearer token...')
       const response = await getToken()
@@ -27,6 +27,8 @@ const getTweets = async (searchTerm) => {
     } catch (err) {
       error(err)
     }
+  } else {
+    log('Using cached bearer token...')
   }
 
   return rp({
