@@ -1,8 +1,8 @@
 import rpVanilla from 'request-promise'
-const { REACT_APP_HOST } = process.env
+const { REACT_APP_HOST, REACT_APP_PORT } = process.env
 
 const rp = rpVanilla.defaults({
-  baseUrl: `http://${REACT_APP_HOST}/`,
+  baseUrl: `http://${REACT_APP_HOST}:${REACT_APP_PORT}/`,
   json: true,
 })
 
