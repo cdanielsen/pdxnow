@@ -1,10 +1,10 @@
 import React from 'react'
 import CardGroup from './CardGroup.js'
 
-const MainView = ({ twitter }) => {
+const MainView = ({ state }) => {
   return (
     <div>
-      <CardGroup {...twitter} />
+      <CardGroup {...state} />
     </div>
   )
 }

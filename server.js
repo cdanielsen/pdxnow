@@ -5,6 +5,10 @@ const {
   searchTweetsHandler,
   searchTweetsMappers,
 } = require('./services/twitter')
+const {
+  searchFlickrPhotosHandler,
+  searchFlickrPhotosMappers,
+} = require('./services/flickr')
 
 const app = express()
 const PORT = process.env.PORT || 5001
@@ -19,6 +23,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/twitter/searchtweets', searchTweetsHandler(searchTweetsMappers))
+app.get(
+  '/api/flickr/searchphotos',
+  searchFlickrPhotosHandler(searchFlickrPhotosMappers)
+)
 
 // Server listener
 app.listen(PORT, err => {

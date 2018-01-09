@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { searchtweets } from '../api/api.js'
+import { searchTweets, searchFlickrPhotos } from '../api/api.js'
 import MainView from './MainView'
 
 class MainViewContainer extends Component {
@@ -8,11 +8,15 @@ class MainViewContainer extends Component {
       isEnabled: true,
       tweetIds: [],
     },
+    flickr: {
+      isEnabled: true,
+      photoData: [],
+    },
   }
 
   async fetchTwitterData() {
     try {
-      const tweetIds = await searchtweets({
+      const tweetIds = await searchTweets({
         searchTerm: '#pdx',
         count: 50,
         mapper: 'getIds',
@@ -24,20 +28,38 @@ class MainViewContainer extends Component {
     }
   }
 
+  async fetchFlickrData() {
+    try {
+      const photoData = await searchFlickrPhotos({
+        tags: 'pdx',
+        mapper: 'getUrls',
+      })
+      return photoData
+    } catch (err) {
+      console.error(`Whoops! => ${err}`)
+      return []
+    }
+  }
+
   async componentDidMount() {
     const tweetIds = await this.fetchTwitterData()
+    const photoData = await this.fetchFlickrData()
     this.setState((ps, props) => {
       return {
         twitter: {
           isEnabled: ps.twitter.isEnabled,
           tweetIds,
         },
+        flickr: {
+          isEnabled: ps.flickr.isEnabled,
+          photoData,
+        },
       }
     })
   }
 
   render() {
-    return <MainView twitter={{ ...this.state.twitter }} />
+    return <MainView state={{ ...this.state }} />
   }
 }
 
