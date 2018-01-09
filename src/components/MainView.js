@@ -1,14 +1,10 @@
 import React from 'react'
-import { Tweet } from 'react-twitter-widgets'
+import CardGroup from './CardGroup.js'
 
-const MainView = ({ tweetIds = [] }) => {
+const MainView = ({ twitter }) => {
   return (
-    <div className="main-content-container">
-      {tweetIds.map(id => (
-        <span className="card-items" key={id}>
-          <Tweet tweetId={id} options={{ theme: 'dark', cards: 'hidden' }} />
-        </span>
-      ))}
+    <div>
+      <CardGroup {...twitter} />
     </div>
   )
 }

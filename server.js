@@ -1,8 +1,10 @@
 const express = require('express')
 const { join } = require('path')
 require('dotenv').config()
-
-const { getTweets } = require('./services/twitter')
+const {
+  searchTweetsHandler,
+  searchTweetsMappers,
+} = require('./services/twitter')
 
 const app = express()
 const PORT = process.env.PORT || 5001
@@ -16,15 +18,7 @@ app.get('/', (req, res) => {
   res.sendFile(`${ASSETS}/index.html`)
 })
 
-app.get('/api/twitter/tweets', async (req, res) => {
-  try {
-    console.log('Attempting to get the tweets!')
-    const tweets = await getTweets('#pdx')
-    res.send(tweets)
-  } catch (err) {
-    console.error(`Twitter service error => ${err}`);
-  }
-})
+app.get('/api/twitter/searchtweets', searchTweetsHandler(searchTweetsMappers))
 
 // Server listener
 app.listen(PORT, err => {

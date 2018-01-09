@@ -1,26 +1,43 @@
 import React, { Component } from 'react'
-import { getTweets } from '../api/api.js'
+import { searchtweets } from '../api/api.js'
 import MainView from './MainView'
 
 class MainViewContainer extends Component {
   state = {
-    tweetIds: ['one'],
+    twitter: {
+      isEnabled: true,
+      tweetIds: [],
+    },
   }
 
-  async componentDidMount() {
+  async fetchTwitterData() {
     try {
-      const tweets = await getTweets()
-      const tweetIds = tweets.statuses.map(status => status.id_str)
-      this.setState({
-        tweetIds,
+      const tweetIds = await searchtweets({
+        searchTerm: '#pdx',
+        count: 50,
+        mapper: 'getIds',
       })
+      return tweetIds
     } catch (err) {
       console.error(`Whoops! => ${err}`)
+      return []
     }
   }
 
+  async componentDidMount() {
+    const tweetIds = await this.fetchTwitterData()
+    this.setState((ps, props) => {
+      return {
+        twitter: {
+          isEnabled: ps.twitter.isEnabled,
+          tweetIds,
+        },
+      }
+    })
+  }
+
   render() {
-    return <MainView tweetIds={this.state.tweetIds} />
+    return <MainView twitter={{ ...this.state.twitter }} />
   }
 }
 

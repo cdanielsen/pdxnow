@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start:dev":
-      "concurrently -n \"DEV_SERVER,API_SERVER\" -c \"bgBlue.bold,bgMagenta.bold\" \"react-scripts start\" \"npm run start\"",
+      "concurrently -n \"DEV_SERVER,API_SERVER\" -c \"bgBlue.bold,bgMagenta.bold\" \"react-scripts start\" \"nodemon server.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -30,10 +30,11 @@
     "dotenv": "4.0.0",
     "husky": "0.14.3",
     "lint-staged": "6.0.0",
+    "nodemon": "1.14.7",
     "prettier": "1.9.2"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
-  "proxy": "http://[::1]:5001"
+  "proxy": "http://localhost:5001"
 }
