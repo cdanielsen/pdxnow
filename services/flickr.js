@@ -2,27 +2,30 @@ const rp = require('request-promise').defaults({ json: true })
 const { log, error } = console
 const { APP_CREDS_FLICKR_SECRET } = process.env
 
-const getFlickrs = searchTerm => {
+const getFlickrs = tags => {
   return rp({
     uri: 'https://api.flickr.com/services/rest',
     method: 'GET',
     qs: {
       method: 'flickr.photos.search',
       api_key: `${APP_CREDS_FLICKR_SECRET}`,
-      tags: 'pdx',
+      tags: tags,
       format: 'json',
       nojsoncallback: 1,
       extras: 'url_m',
+      sort: 'interestingness-desc',
     },
   })
 }
 
 const searchFlickrPhotosMappers = {
   getUrls: rawData => {
-    return rawData.photos.photo.map(photo => {
+    return rawData.photos.photo.map(({ owner, id, url_m, title }) => {
       return {
-        url_m: photo.url_m,
-        title: photo.title,
+        owner,
+        id,
+        url_m,
+        title,
       }
     })
   },
@@ -30,14 +33,16 @@ const searchFlickrPhotosMappers = {
 
 const searchFlickrPhotosHandler = mappers => {
   return async (req, res) => {
-    const { searchTerm, mapper } = req.query
+    const { tags, mapper } = req.query
     try {
       log('Attempting to get the flickrs!')
-      const data = await getFlickrs({ searchTerm })
+      var data = await getFlickrs(tags)
       const mappedData = mappers[mapper](data)
       res.send(mappedData)
     } catch (err) {
-      error(`Flickr service error => ${err}`)
+      error(
+        `Flickr service error => ${err} => ${JSON.stringify(data, null, 2)}`
+      )
     }
   }
 }

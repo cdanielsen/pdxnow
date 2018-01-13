@@ -19,7 +19,7 @@ const searchTweets = ({ searchTerm, count, mapper }) => {
 
 const searchFlickrPhotos = ({ tags, mapper }) => {
   return rp({
-    uri: 'api/flickr/searchphotos',
+    uri: '/api/flickr/searchphotos',
     qs: {
       tags,
       mapper,
