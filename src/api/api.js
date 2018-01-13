@@ -6,10 +6,25 @@ const rp = rpVanilla.defaults({
   json: true,
 })
 
-const getTweets = () => {
+const searchTweets = ({ searchTerm, count, mapper }) => {
   return rp({
-    uri: '/api/twitter/tweets',
+    uri: '/api/twitter/searchtweets',
+    qs: {
+      searchTerm,
+      count,
+      mapper,
+    },
   })
 }
 
-export { getTweets }
+const searchFlickrPhotos = ({ tags, mapper }) => {
+  return rp({
+    uri: '/api/flickr/searchphotos',
+    qs: {
+      tags,
+      mapper,
+    },
+  })
+}
+
+export { searchTweets, searchFlickrPhotos }

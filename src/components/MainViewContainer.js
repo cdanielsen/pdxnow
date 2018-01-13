@@ -1,26 +1,65 @@
 import React, { Component } from 'react'
-import { getTweets } from '../api/api.js'
+import { searchTweets, searchFlickrPhotos } from '../api/api.js'
 import MainView from './MainView'
 
 class MainViewContainer extends Component {
   state = {
-    tweetIds: ['one'],
+    twitter: {
+      isEnabled: true,
+      tweetIds: [],
+    },
+    flickr: {
+      isEnabled: true,
+      photoData: [],
+    },
   }
 
-  async componentDidMount() {
+  async fetchTwitterData() {
     try {
-      const tweets = await getTweets()
-      const tweetIds = tweets.statuses.map(status => status.id_str)
-      this.setState({
-        tweetIds,
+      const tweetIds = await searchTweets({
+        searchTerm: '#pdx',
+        count: 50,
+        mapper: 'getIds',
       })
+      return tweetIds
     } catch (err) {
       console.error(`Whoops! => ${err}`)
+      return []
     }
   }
 
+  async fetchFlickrData() {
+    try {
+      const photoData = await searchFlickrPhotos({
+        tags: 'pdx',
+        mapper: 'getUrls',
+      })
+      return photoData
+    } catch (err) {
+      console.error(`Whoops! => ${err}`)
+      return []
+    }
+  }
+
+  async componentDidMount() {
+    const tweetIds = await this.fetchTwitterData()
+    const photoData = await this.fetchFlickrData()
+    this.setState((ps, props) => {
+      return {
+        twitter: {
+          isEnabled: ps.twitter.isEnabled,
+          tweetIds,
+        },
+        flickr: {
+          isEnabled: ps.flickr.isEnabled,
+          photoData,
+        },
+      }
+    })
+  }
+
   render() {
-    return <MainView tweetIds={this.state.tweetIds} />
+    return <MainView state={{ ...this.state }} />
   }
 }
 
