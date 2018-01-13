@@ -1,5 +1,11 @@
 import React from 'react'
+import shuffle from 'lodash.shuffle'
 import { Tweet } from 'react-twitter-widgets'
+
+const TWITTER_CARD_OPTS = {
+  cards: 'hidden',
+  hide_thread: true,
+}
 
 const CardGroup = ({ twitter, flickr }) => {
   const generateTwitterCards = (ids, options) => {
@@ -13,30 +19,16 @@ const CardGroup = ({ twitter, flickr }) => {
   const generateFlickrCards = data => {
     return data.map((datum, idx) => (
       <span className="card-items" key={idx}>
-        <img src={datum.url_m} alt={datum.title} />
+        <a href={`https://www.flickr.com/photos/${datum.owner}/${datum.id}`}>
+          <img src={datum.url_m} alt={datum.title} />
+        </a>
       </span>
     ))
   }
 
-  // Stolen with appreciation from https://bost.ocks.org/mike/shuffle/ !!
-  const shuffleArray = array => {
-    var m = array.length,
-      t,
-      i
-    while (m) {
-      i = Math.floor(Math.random() * m--)
-      t = array[m]
-      array[m] = array[i]
-      array[i] = t
-    }
-    return array
-  }
-
-  const twitterCards = generateTwitterCards(twitter.tweetIds, {
-    cards: 'hidden',
-  })
+  const twitterCards = generateTwitterCards(twitter.tweetIds, TWITTER_CARD_OPTS)
   const flickrCards = generateFlickrCards(flickr.photoData)
-  const renderArray = shuffleArray([...twitterCards, ...flickrCards])
+  const renderArray = shuffle([...twitterCards, ...flickrCards])
 
   return <div className="main-content-container">{renderArray}</div>
 }
