@@ -2,20 +2,21 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: black;
+  background-color: white;
   height: 150px;
   padding: 20px;
-  color: white;
+  margin: 30px;
+  color: black;
+  font-family: 'Julius Sans One', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-title {
-  font-size: 5em;
+  font-size: 7em;
+  margin: 0;
 }
 
 .App-intro {
