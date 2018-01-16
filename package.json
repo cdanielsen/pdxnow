@@ -16,7 +16,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
-    "start": "node server.js"
+    "start": "SET \"NODE_ENV=production\" && node server.js"
   },
   "dependencies": {
     "express": "4.16.2",
