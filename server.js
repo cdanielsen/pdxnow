@@ -1,5 +1,7 @@
 const express = require('express')
+const herokuForceSsl = require('heroku-ssl-redirect')
 const { join } = require('path')
+const { log } = console
 require('dotenv').config()
 const {
   searchTweetsHandler,
@@ -16,9 +18,13 @@ const ASSETS = join(__dirname, 'build')
 
 // Serve static files from ./build
 app.use(express.static(ASSETS))
+app.use(herokuForceSsl())
+app.use('*', (req, res, next) => {
+  log(`${req.method} request for route ${req.originalUrl} recieved`)
+  next()
+})
 
 app.get('/', (req, res) => {
-  console.log('Request for root route recieved!')
   res.sendFile(`${ASSETS}/index.html`)
 })
 
@@ -31,7 +37,7 @@ app.get(
 // Server listener
 app.listen(PORT, err => {
   if (err) {
-    return console.log('Something bad happened', err)
+    return log('Something bad happened', err)
   }
-  console.log(`Huzzah! Express Server is listening at http://localhost:${PORT}`)
+  log(`Huzzah! Express Server is listening at http://localhost:${PORT}`)
 })

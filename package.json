@@ -11,6 +11,7 @@
   "scripts": {
     "start:dev":
       "concurrently -n \"DEV_SERVER,API_SERVER\" -c \"bgBlue.bold,bgMagenta.bold\" \"react-scripts start\" \"nodemon server.js\"",
+    "startz": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -19,6 +20,7 @@
   },
   "dependencies": {
     "express": "4.16.2",
+    "heroku-ssl-redirect": "0.0.4",
     "lodash.shuffle": "4.2.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
