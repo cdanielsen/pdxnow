@@ -3,7 +3,7 @@ const herokuForceSsl = require('heroku-ssl-redirect')
 const { join } = require('path')
 const { log } = console
 require('dotenv').config()
-const { NODE_ENV } = process.ENV
+const { NODE_ENV } = process.env
 const {
   searchTweetsHandler,
   searchTweetsMappers,
