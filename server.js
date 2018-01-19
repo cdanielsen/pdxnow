@@ -3,6 +3,7 @@ const herokuForceSsl = require('heroku-ssl-redirect')
 const { join } = require('path')
 const { log } = console
 require('dotenv').config()
+const { NODE_ENV } = process.ENV
 const {
   searchTweetsHandler,
   searchTweetsMappers,
@@ -39,5 +40,7 @@ app.listen(PORT, err => {
   if (err) {
     return log('Something bad happened', err)
   }
-  log(`Huzzah! Express Server is listening at http://localhost:${PORT}`)
+  log(
+    `Huzzah! Express Server is listening at http://localhost:${PORT}. NODE_ENV is ${NODE_ENV}`
+  )
 })
