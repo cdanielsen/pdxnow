@@ -1,7 +1,7 @@
 import rpVanilla from 'request-promise'
 const HOST = window.location.host
 
-const baseUrl = `http://${HOST}`
+const baseUrl = `https://${HOST}`
 
 const rp = rpVanilla.defaults({
   baseUrl,
