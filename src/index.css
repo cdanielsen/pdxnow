@@ -4,11 +4,36 @@ body {
   font-family: sans-serif;
 }
 
+div.filter-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+filter-control {
+  margin: 20px;
+}
+
+.filter-control svg {
+  stroke-width: 1;
+}
+
+svg[isenabled='true'] {
+  fill: #5effc0;
+}
+
+#no-content-message {
+  padding: 20px;
+  margin: 50px;
+}
+
 div.main-content-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
 }
 
 .card-items {
