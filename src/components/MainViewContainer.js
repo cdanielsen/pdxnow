@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { searchTweets, searchFlickrPhotos } from '../api/api.js'
 import MainView from './MainView'
+import CardGroup from './CardGroup.js'
 
 class MainViewContainer extends Component {
   state = {
@@ -17,7 +18,7 @@ class MainViewContainer extends Component {
   async fetchTwitterData() {
     try {
       const tweetIds = await searchTweets({
-        searchTerm: '#pdx',
+        searchTerm: '#pdx OR #portland',
         count: 50,
         mapper: 'getIds',
       })
@@ -59,7 +60,11 @@ class MainViewContainer extends Component {
   }
 
   render() {
-    return <MainView state={{ ...this.state }} />
+    return (
+      <MainView>
+        <CardGroup {...this.state} />
+      </MainView>
+    )
   }
 }
 

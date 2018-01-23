@@ -1,12 +1,7 @@
 import React from 'react'
-import CardGroup from './CardGroup.js'
 
-const MainView = ({ state }) => {
-  return (
-    <div>
-      <CardGroup {...state} />
-    </div>
-  )
+const MainView = ({ children }) => {
+  return <div>{children}</div>
 }
 
 export default MainView

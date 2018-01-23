@@ -9,7 +9,7 @@ const getFlickrs = tags => {
     qs: {
       method: 'flickr.photos.search',
       api_key: `${APP_CREDS_FLICKR_SECRET}`,
-      tags: tags,
+      tags,
       format: 'json',
       nojsoncallback: 1,
       extras: 'url_m',
@@ -36,12 +36,12 @@ const searchFlickrPhotosHandler = mappers => {
     const { tags, mapper } = req.query
     try {
       log('Attempting to get the flickrs!')
-      var data = await getFlickrs(tags)
-      const mappedData = mappers[mapper](data)
+      var rawData = await getFlickrs(tags)
+      const mappedData = mappers[mapper](rawData)
       res.send(mappedData)
     } catch (err) {
       error(
-        `Flickr service error => ${err} => ${JSON.stringify(data, null, 2)}`
+        `Flickr service error => ${err} => ${JSON.stringify(rawData, null, 2)}`
       )
     }
   }
