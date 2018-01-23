@@ -26,11 +26,22 @@ const CardGroup = ({ twitter, flickr }) => {
     ))
   }
 
-  const twitterCards = generateTwitterCards(twitter.tweetIds, TWITTER_CARD_OPTS)
-  const flickrCards = generateFlickrCards(flickr.photoData)
+  const twitterCards = twitter.isEnabled
+    ? generateTwitterCards(twitter.tweetIds, TWITTER_CARD_OPTS)
+    : []
+  const flickrCards = flickr.isEnabled
+    ? generateFlickrCards(flickr.photoData)
+    : []
+  const noContentPlaceHolder = (
+    <span id="no-content-message">Click an icon to generate content</span>
+  )
   const renderArray = shuffle([...twitterCards, ...flickrCards])
 
-  return <div className="main-content-container">{renderArray}</div>
+  return (
+    <div className="main-content-container">
+      {renderArray.length === 0 ? noContentPlaceHolder : renderArray}
+    </div>
+  )
 }
 
 export default CardGroup

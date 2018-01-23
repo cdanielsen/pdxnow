@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { searchTweets, searchFlickrPhotos } from '../api/api.js'
 import MainView from './MainView'
 import CardGroup from './CardGroup.js'
+import FilterControl from './FilterControl.js'
 
 class MainViewContainer extends Component {
   state = {
@@ -59,9 +60,43 @@ class MainViewContainer extends Component {
     })
   }
 
+  onTwitterClick = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      twitter: {
+        ...prevState.twitter,
+        isEnabled: !prevState.twitter.isEnabled,
+      },
+    }))
+  }
+
+  onFlickrClick = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      flickr: {
+        ...prevState.flickr,
+        isEnabled: !prevState.flickr.isEnabled,
+      },
+    }))
+  }
+
   render() {
     return (
       <MainView>
+        <div className="filter-group">
+          <FilterControl
+            name="twitter"
+            styles={{ size: 120 }}
+            clickHandler={this.onTwitterClick}
+            isenabled={this.state.twitter.isEnabled}
+          />
+          <FilterControl
+            name="flickr"
+            styles={{ size: 120 }}
+            clickHandler={this.onFlickrClick}
+            isenabled={this.state.flickr.isEnabled}
+          />
+        </div>
         <CardGroup {...this.state} />
       </MainView>
     )
