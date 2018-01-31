@@ -1,0 +1,16 @@
+.filter-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
+  padding: 0 10rem;
+}
+
+.main-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: 'Lato', sans-serif;
+  font-size: 2rem;
+}

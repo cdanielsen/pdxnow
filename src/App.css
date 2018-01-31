@@ -5,10 +5,9 @@
 .App-header {
   background-color: white;
   height: 150px;
-  padding: 20px;
-  margin: 30px;
+  padding: 10px;
+  margin: 10px;
   color: black;
-  font-family: 'Julius Sans One', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,18 +15,10 @@
 
 .App-title {
   font-size: 7em;
+  font-family: 'Julius Sans One', sans-serif;
   margin: 0;
 }
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
