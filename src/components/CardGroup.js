@@ -1,6 +1,7 @@
 import React from 'react'
 import shuffle from 'lodash.shuffle'
 import { Tweet } from 'react-twitter-widgets'
+import './CardGroup.css'
 
 const TWITTER_CARD_OPTS = {
   cards: 'hidden',

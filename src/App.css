@@ -8,7 +8,6 @@
   padding: 10px;
   margin: 10px;
   color: black;
-  font-family: 'Julius Sans One', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +15,7 @@
 
 .App-title {
   font-size: 7em;
+  font-family: 'Julius Sans One', sans-serif;
   margin: 0;
 }
 

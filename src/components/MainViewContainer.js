@@ -3,15 +3,16 @@ import { searchTweets, searchFlickrPhotos } from '../api/api.js'
 import MainView from './MainView'
 import CardGroup from './CardGroup.js'
 import FilterControl from './FilterControl.js'
+import './MainViewContainer.css'
 
 class MainViewContainer extends Component {
   state = {
     twitter: {
-      isEnabled: true,
+      isEnabled: false,
       tweetIds: [],
     },
     flickr: {
-      isEnabled: true,
+      isEnabled: false,
       photoData: [],
     },
   }
@@ -86,13 +87,15 @@ class MainViewContainer extends Component {
         <div className="filter-group">
           <FilterControl
             name="twitter"
-            styles={{ size: 120 }}
+            color="blue"
+            style={{ fontSize: '2rem' }}
             clickHandler={this.onTwitterClick}
             isenabled={this.state.twitter.isEnabled}
           />
           <FilterControl
             name="flickr"
-            styles={{ size: 120 }}
+            color="blue"
+            style={{ fontSize: '2rem' }}
             clickHandler={this.onFlickrClick}
             isenabled={this.state.flickr.isEnabled}
           />

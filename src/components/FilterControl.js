@@ -1,31 +1,18 @@
 import React from 'react'
-import { Twitter, Aperture } from 'react-feather'
+import { Button } from 'semantic-ui-react'
+import './FilterControl.css'
 
-const FilterControl = props => {
-  const servicePicker = ({ name, styles, clickHandler, isenabled }) => {
-    switch (name) {
-      case 'twitter':
-        return (
-          <Twitter
-            {...styles}
-            isenabled={`${isenabled}`}
-            onClick={clickHandler}
-          />
-        )
-      case 'flickr':
-        return (
-          <Aperture
-            {...styles}
-            isenabled={`${isenabled}`}
-            onClick={clickHandler}
-          />
-        )
-      default:
-        return null
-    }
-  }
-
-  return <div className="filter-control">{servicePicker(props)}</div>
+const FilterControl = ({ name, color, clickHandler, isenabled, style }) => {
+  return (
+    <Button
+      circular
+      icon={name}
+      color={color}
+      onClick={clickHandler}
+      isenabled={`${isenabled}`}
+      style={style}
+    />
+  )
 }
 
 export default FilterControl
