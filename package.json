@@ -41,7 +41,7 @@
     "lint-staged": "6.1.0",
     "nodemon": "1.14.11",
     "prettier": "1.10.2",
-    "snyk": "1.69.1"
+    "snyk": "1.69.6"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": ["prettier --write", "git add"]
