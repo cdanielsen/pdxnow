@@ -9,8 +9,7 @@
     "npm": ">5.0.0"
   },
   "scripts": {
-    "start:dev":
-      "concurrently -n \"DEV_SERVER,API_SERVER\" -c \"bgBlue.bold,bgMagenta.bold\" \"react-scripts start\" \"nodemon server.js\"",
+    "start:dev": "concurrently -n \"DEV_SERVER,API_SERVER\" -c \"bgBlue.bold,bgMagenta.bold\" \"react-scripts start\" \"nodemon server.js\"",
     "startz": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -44,7 +43,10 @@
     "snyk": "1.69.1"
   },
   "lint-staged": {
-    "*.{js,jsx,json,css}": ["prettier --write", "git add"]
+    "*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "proxy": "http://localhost:5001"
 }
