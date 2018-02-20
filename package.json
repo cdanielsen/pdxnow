@@ -30,7 +30,7 @@
     "react-scripts": "1.1.0",
     "react-twitter-widgets": "1.7.1",
     "request-promise": "4.2.2",
-    "semantic-ui-css": "2.2.14",
+    "semantic-ui-css": "2.3.0",
     "semantic-ui-react": "0.77.2"
   },
   "devDependencies": {
