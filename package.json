@@ -31,7 +31,7 @@
     "react-twitter-widgets": "1.7.1",
     "request-promise": "4.2.2",
     "semantic-ui-css": "2.2.14",
-    "semantic-ui-react": "0.77.2"
+    "semantic-ui-react": "0.78.3"
   },
   "devDependencies": {
     "concurrently": "3.5.1",
