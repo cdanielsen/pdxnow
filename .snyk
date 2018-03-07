@@ -144,4 +144,23 @@ ignore:
     - react-scripts > webpack-dev-server > selfsigned > node-forge:
         reason: None given
         expires: '2018-03-29T07:51:28.484Z'
+  'npm:cookie-signature:20180111':
+    - express > cookie-signature:
+        reason: >-
+          Looks like a mistaken report
+          https://github.com/snyk/vulnerabilitydb/issues/23
+        expires: '2018-04-05T18:22:56.709Z'
+    - react-scripts > webpack-dev-server > express > cookie-signature:
+        reason: 'https://github.com/snyk/vulnerabilitydb/issues/23'
+        expires: '2018-04-05T18:22:56.709Z'
+  'npm:nwmatcher:20180305':
+    - react-scripts > jest > jest-cli > jest-environment-jsdom > jsdom > nwmatcher:
+        reason: Test code dependency
+        expires: '2018-04-05T18:22:56.709Z'
+    - react-scripts > jest > jest-cli > jest-config > jest-environment-jsdom > jsdom > nwmatcher:
+        reason: Test code dependency
+        expires: '2018-04-05T18:22:56.709Z'
+    - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-jsdom > jsdom > nwmatcher:
+        reason: Test code dependency
+        expires: '2018-04-05T18:22:56.709Z'
 patch: {}
