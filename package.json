@@ -39,7 +39,7 @@
     "husky": "0.14.3",
     "lint-staged": "6.1.1",
     "nodemon": "1.17.2",
-    "prettier": "1.12.0",
+    "prettier": "1.12.1",
     "snyk": "1.70.0"
   },
   "lint-staged": {
