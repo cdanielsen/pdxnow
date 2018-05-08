@@ -7,17 +7,18 @@ after_script: greenkeeper-lockfile-upload
 install: npm i
 script: npm run build && npm run test:ci
 deploy:
-  matrix:
-  - provider: heroku
-    app: pdxnow
-    skip_cleanup: true
-    on:
-      branch: master
-  - provider: heroku
-    app: test-pdxnow
-    skip_cleanup: true
-    on:
-      all_branches: true
+- provider: heroku
+  app: pdxnow
+  skip_cleanup: true
+  on:
+    branch: master
+  api_key:
+    secure: bThGAVP1c75qkgRMqpF37q+K4ND+R0celsnseLZb3nwYcwM0SmHYYWU4X1XiTiF+IUIPnIiJCxvhx9kd2RpIWma/c5vB7wraMgMbgeU0r/13dQ+sFunhXGOfD+8V0L9OnXViXiFRw7LO0hGjc7xieQgm4K4lzCC0omrqV1ZllNJHWpmeHqC2AKfLtwD546FJ7mX0DCbMXyBJP8QmKnEkbTPrbFBiTlzW3qwg8vqDPluGk0z2r5khH/Ng9/j5PYPQ5UrdxS7I5epfioXOyAlh22SxBDZUfSQlGumTI0378D6YluN8J/fRFKUq/G9O1WHuQOuz/HqNnMuaRjIqmdrIK+ukFzNxK9hK1qmlZkcnXsRcvgHJTlkYEt9Z+jvoT4rWI5Z1BODm++3te2A8Vg/7Il7HuBDFjwVPES0HJlixcNX/JiBhstPG7wQ8kWQ3tByEZMQ078+QxT37Iq16qynZwjD4ltEFeSWvCogN0nzHufB6jOMQ1M9t7GBQa8bQ2ePPw8EZ0hK0P+t5ja/uklqzvNTQMMvhDVC0nBrAnBFulSwazgbAJYkqTqFRvCbWhUcUDG/R3efI0a8nlNlW44zdspZuM8mbZFuc6Yc7MX3g9CmPb//68WtgsBTs2GBAqFIWEQczh+N5F8f+1Dn6G/KuvPcdgLp6/qSWH+cDG3f6tGI=
+- provider: heroku
+  app: test-pdxnow
+  skip_cleanup: true
+  on:
+    all_branches: true
   api_key:
     secure: bThGAVP1c75qkgRMqpF37q+K4ND+R0celsnseLZb3nwYcwM0SmHYYWU4X1XiTiF+IUIPnIiJCxvhx9kd2RpIWma/c5vB7wraMgMbgeU0r/13dQ+sFunhXGOfD+8V0L9OnXViXiFRw7LO0hGjc7xieQgm4K4lzCC0omrqV1ZllNJHWpmeHqC2AKfLtwD546FJ7mX0DCbMXyBJP8QmKnEkbTPrbFBiTlzW3qwg8vqDPluGk0z2r5khH/Ng9/j5PYPQ5UrdxS7I5epfioXOyAlh22SxBDZUfSQlGumTI0378D6YluN8J/fRFKUq/G9O1WHuQOuz/HqNnMuaRjIqmdrIK+ukFzNxK9hK1qmlZkcnXsRcvgHJTlkYEt9Z+jvoT4rWI5Z1BODm++3te2A8Vg/7Il7HuBDFjwVPES0HJlixcNX/JiBhstPG7wQ8kWQ3tByEZMQ078+QxT37Iq16qynZwjD4ltEFeSWvCogN0nzHufB6jOMQ1M9t7GBQa8bQ2ePPw8EZ0hK0P+t5ja/uklqzvNTQMMvhDVC0nBrAnBFulSwazgbAJYkqTqFRvCbWhUcUDG/R3efI0a8nlNlW44zdspZuM8mbZFuc6Yc7MX3g9CmPb//68WtgsBTs2GBAqFIWEQczh+N5F8f+1Dn6G/KuvPcdgLp6/qSWH+cDG3f6tGI=
 env:
