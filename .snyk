@@ -6,107 +6,192 @@ ignore:
     - react-scripts > webpack-dev-server > http-proxy-middleware > micromatch > braces:
         reason: dev-server dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > webpack-dev-server > chokidar > anymatch > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > webpack-dev-server > chokidar > anymatch > micromatch > braces:
         reason: dev-server dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > webpack-dev-server > http-proxy-middleware > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-environment-jsdom > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-haste-map > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-haste-map > sane > anymatch > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-environment-jsdom > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-config > jest-environment-jsdom > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-haste-map > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-config > jest-environment-node > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-haste-map > sane > anymatch > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-config > jest-jasmine2 > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-config > jest-jasmine2 > jest-matchers > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-jasmine2 > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-config > jest-jasmine2 > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-jasmine2 > jest-matchers > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-jasmine2 > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-jasmine2 > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-jasmine2 > jest-matchers > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-config > jest-environment-jsdom > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-jasmine2 > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-config > jest-environment-node > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-config > jest-jasmine2 > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-config > jest-jasmine2 > jest-matchers > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-config > jest-jasmine2 > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-haste-map > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-haste-map > sane > anymatch > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-haste-map > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-haste-map > sane > anymatch > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-jsdom > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-jsdom > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-node > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-node > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-jasmine2 > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-jasmine2 > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-jasmine2 > jest-matchers > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-jasmine2 > jest-matchers > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-jasmine2 > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-jasmine2 > jest-snapshot > jest-util > jest-message-util > micromatch > braces:
         reason: test framework dep
         expires: '2018-05-05T20:25:46.661Z'
+      react-scripts > jest > jest-cli > jest-runtime > micromatch > braces:
+        reason: dev-dep downstream packagedev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
   'npm:content-type-parser:20170905':
     - react-scripts > jest > jest-cli > jest-environment-jsdom > jsdom > content-type-parser:
-        reason: test framework dep
-        expires: '2018-05-05T20:25:46.661Z'
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-config > jest-environment-jsdom > jsdom > content-type-parser:
-        reason: test framework dep
-        expires: '2018-05-05T20:25:46.661Z'
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-jsdom > jsdom > content-type-parser:
-        reason: test framework dep
-        expires: '2018-05-05T20:25:46.661Z'
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
   'npm:eslint:20180222':
     - react-scripts > eslint:
-        reason: test framework dep
-        expires: '2018-05-05T20:25:46.661Z'
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
   'npm:node-forge:20180226':
     - react-scripts > webpack-dev-server > selfsigned > node-forge:
         reason: dev-server dep
         expires: '2018-05-05T20:25:46.661Z'
   'npm:nwmatcher:20180305':
     - react-scripts > jest > jest-cli > jest-environment-jsdom > jsdom > nwmatcher:
-        reason: test framework dep
-        expires: '2018-05-05T20:25:46.661Z'
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-config > jest-environment-jsdom > jsdom > nwmatcher:
-        reason: test framework dep
-        expires: '2018-05-05T20:25:46.661Z'
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-jsdom > jsdom > nwmatcher:
-        reason: test framework dep
-        expires: '2018-05-05T20:25:46.661Z'
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
+  'npm:querystringify:20180419':
+    - react-scripts > react-dev-utils > sockjs-client > eventsource > original > url-parse > querystringify:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
+    - react-scripts > webpack-dev-server > sockjs-client > eventsource > original > url-parse > querystringify:
+        reason: dev-dep downstream package
+        expires: '2018-06-07T16:42:39.947Z'
 patch: {}

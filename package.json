@@ -13,12 +13,13 @@
     "startz": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test:ci": "cross-env CI=true snyk test && react-scripts test --env=jsdom",
+    "test:ci": "snyk test && cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "ajv": "6.4.0",
     "cross-env": "5.1.4",
     "dotenv": "5.0.1",
     "express": "4.16.3",
