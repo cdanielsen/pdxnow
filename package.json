@@ -16,36 +16,38 @@
     "test:ci": "snyk test && cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
+    "prettify": "prettier --write",
+    "snyk": "snyk",
     "start": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
-    "ajv": "6.5.0",
-    "cross-env": "5.1.5",
-    "dotenv": "5.0.1",
+    "ajv": "6.5.2",
+    "cross-env": "5.2.0",
+    "dotenv": "6.0.0",
     "express": "4.16.3",
     "heroku-ssl-redirect": "0.0.4",
     "lodash.shuffle": "4.2.0",
     "morgan": "1.9.0",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
-    "react-feather": "1.1.0",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "react-feather": "1.1.1",
     "react-scripts": "1.1.4",
     "react-twitter-widgets": "1.7.1",
     "request-promise": "4.2.2",
-    "semantic-ui-css": "2.3.1",
-    "semantic-ui-react": "0.79.1"
+    "semantic-ui-css": "2.3.3",
+    "semantic-ui-react": "0.82.1"
   },
   "devDependencies": {
-    "concurrently": "3.5.1",
+    "concurrently": "3.6.1",
     "husky": "0.14.3",
-    "lint-staged": "6.1.1",
-    "nodemon": "1.17.2",
-    "prettier": "1.12.1",
-    "snyk": "1.70.0"
+    "lint-staged": "7.2.0",
+    "nodemon": "1.18.3",
+    "prettier": "1.13.7",
+    "snyk": "1.89.0"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
-      "prettier --write",
+      "npm run prettify --",
       "git add"
     ]
   },
