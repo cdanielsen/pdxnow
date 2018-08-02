@@ -6,6 +6,7 @@ before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 install: npm i
 script: npm run build && npm run test:ci
+before_deploy: rm -rf node_modules
 deploy:
   - provider: heroku
     app: pdxnow
