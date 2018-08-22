@@ -31,7 +31,7 @@
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "react-feather": "1.1.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "1.1.5",
     "react-twitter-widgets": "1.7.1",
     "request-promise": "4.2.2",
     "semantic-ui-css": "2.3.3",
