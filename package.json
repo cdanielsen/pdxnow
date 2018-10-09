@@ -42,7 +42,7 @@
     "lint-staged": "7.3.0",
     "nodemon": "1.18.4",
     "prettier": "1.14.3",
-    "snyk": "1.99.0"
+    "snyk": "1.103.0"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": [
