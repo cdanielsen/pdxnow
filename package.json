@@ -39,7 +39,7 @@
   "devDependencies": {
     "concurrently": "4.0.0",
     "husky": "1.0.0",
-    "lint-staged": "7.3.0",
+    "lint-staged": "8.0.0",
     "nodemon": "1.18.4",
     "prettier": "1.14.3",
     "snyk": "1.99.0"
